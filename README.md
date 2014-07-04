@@ -5,6 +5,10 @@ Search widget to filter Bootstrap lists
 
 *Compatible with Bootstrap 3!*
 
+Author: Stefano Cudini
+
+[labs.easyblog.it](http://labs.easyblog.it/)
+
 **Features:**
 * complete mobile responsive
 * dynamic list generation
@@ -14,8 +18,14 @@ Search widget to filter Bootstrap lists
 * filter by sub elements
 
 **Demo online:**
-* [Static filter](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
-* [Ajax search](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
+* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
+* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
+* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
+
+#Source
+* [Github](https://github.com/stefanocudini/bootstrap-list-filter)
+* [NPM](https://npmjs.org/package/bootstrap-list-filter)  
+* [Atmosphere](https://atmosphere.meteor.com/package/bootstrap-list-filter)
 
 
 ![Image](https://raw.githubusercontent.com/stefanocudini/bootstrap-list-filter/master/images/bootstrap-list-filter.png)
@@ -37,8 +47,3 @@ Search widget to filter Bootstrap lists
 	$('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
 </script>
 ```
-
-#Source
-* [Github](https://github.com/stefanocudini/bootstrap-list-filter)
-* [NPM](https://npmjs.org/package/bootstrap-list-filter)  
-* [Atmosphere](https://atmosphere.meteor.com/package/bootstrap-list-filter)
