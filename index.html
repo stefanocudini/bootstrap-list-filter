@@ -1,0 +1,156 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="bootstrap-list-filter">Bootstrap List Filter</h1>
+<p>Search widget to filter Bootstrap lists</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>complete mobile responsive</li>
+<li>dynamic list generation</li>
+<li>support preloaded list</li>
+<li>custom html template</li>
+<li>custom data format</li>
+<li>filter by sub elements</li>
+</ul>
+<p><em>Compatible with Bootstrap 3!</em></p>
+<p><strong>Demo online:</strong></p>
+<ul>
+<li><a href="http://labs.easyblog.it/bootstrap-list-filter/examples/static.html">Static filter</a></li>
+<li><a href="http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html">Ajax search</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/stefanocudini/bootstrap-list-filter/master/images/bootstrap-list-filter.png" alt="Image"></p>
+<h1 id="usage">Usage</h1>
+<pre><code class="lang-html">&lt;form role=&quot;form&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;input id=&quot;searchinput&quot; class=&quot;form-control&quot; type=&quot;search&quot; placeholder=&quot;Search...&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;searchlist&quot; class=&quot;list-group&quot;&gt;
+        &lt;a class=&quot;list-group-item&quot; href=&quot;aquamarine.html&quot;&gt;&lt;span&gt;aquamarine&lt;/span&gt;&lt;/a&gt;
+        &lt;a class=&quot;list-group-item&quot; href=&quot;blue.html&quot;&gt;&lt;span&gt;blue&lt;/span&gt;&lt;/a&gt;
+        &lt;a class=&quot;list-group-item&quot; href=&quot;cyan.html&quot;&gt;&lt;span&gt;cyan&lt;/span&gt;&lt;/a&gt;
+        ...
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;script&gt;
+    $(&#39;#searchlist&#39;).btsListFilter(&#39;#searchinput&#39;, {itemChild: &#39;span&#39;});
+&lt;/script&gt;</code></pre>
+<h1 id="source">Source</h1>
+<ul>
+<li><a href="https://github.com/stefanocudini/bootstrap-list-filter">Github</a></li>
+<li><a href="https://npmjs.org/package/bootstrap-list-filter">NPM</a>  </li>
+<li><a href="https://atmosphere.meteor.com/package/bootstrap-list-filter">Atmosphere</a></li>
+</ul>
+
+  </body>
+</html>

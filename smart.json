@@ -1,0 +1,10 @@
+{
+	"name": "bootstrap-list-filter",
+	"description": "Search widget to filter Bootstrap lists",
+	"homepage": "http://labs.easyblog.it/bootstrap-list-filter/",
+	"author": "Stefano Cudini <stefano.cudini@gmail.com>",
+	"version": "0.0.1",
+	"git": "https://github.com/stefanocudini/bootstrap-list-filter.git",
+	"packages": {
+	}
+}

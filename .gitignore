@@ -1,0 +1,7 @@
+node_modules/
+bower_components/
+packages/
+npm-debug.log
+node_modules
+components
+smart.lock

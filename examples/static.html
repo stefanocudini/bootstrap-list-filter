@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>example</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<head>
+
+<body>
+
+<div class="container">
+
+	<h2><a href="../">Bootstrap List Filter</a></h2>
+
+	<h3>Static Example</h3>
+		
+	<form role="form">
+		<div class="form-group">
+			<input class="form-control" id="searchinput" type="search" placeholder="Search..." />
+		</div>
+		<div id="searchlist" class="list-group">
+			<a class="list-group-item" href="#"><span>aquamarine</span><i style="background:aquamarine" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>black</span><i style="background:black" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>blue</span><i style="background:blue" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>chocolate</span><i style="background:chocolate" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>coral</span><i style="background:coral" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>cyan</span><i style="background:cyan" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>darkblue"</span><i style="background:darkblue" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>darkred</span><i style="background:darkred" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>darkgray</span><i style="background:darkgray" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>dodgerblue</span><i style="background:dodgerblue" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>gray</span><i style="background:gray" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>green"</span><i style="background:green" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>greenyellow</span><i style="background:greenyellow" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>red</span><i style="background:red" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>rosybrown</span><i style="background:rosybrown" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>royalblue</span><i style="background:royalblue" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>salmon</span><i style="background:salmon" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>seagreen</span><i style="background:seagreen" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>silver</span><i style="background:silver" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>skyblue</span><i style="background:skyblue" class="badge">&nbsp;</i></a>
+			<a class="list-group-item" href="#"><span>yellow</span><i style="background:yellow" class="badge">&nbsp;</i></a>
+		</div>
+	</form>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../bootstrap-list-filter.src.js"></script>
+<script>
+
+$('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
+
+</script>
+<!-- <script src="/labs-common.js"></script> -->
+</body>
+</html>
