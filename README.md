@@ -3,15 +3,15 @@ Bootstrap List Filter
 
 Search widget to filter Bootstrap lists
 
-**Features**
+*Compatible with Bootstrap 3!*
+
+**Features:**
 * complete mobile responsive
 * dynamic list generation
 * support preloaded list
 * custom html template
 * custom data format
 * filter by sub elements
-
-*Compatible with Bootstrap 3!*
 
 **Demo online:**
 * [Static filter](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
