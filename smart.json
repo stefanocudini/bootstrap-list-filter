@@ -3,8 +3,9 @@
 	"description": "Search widget to filter Bootstrap lists",
 	"homepage": "http://labs.easyblog.it/bootstrap-list-filter/",
 	"author": "Stefano Cudini <stefano.cudini@gmail.com>",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"git": "https://github.com/stefanocudini/bootstrap-list-filter.git",
 	"packages": {
+		"bootstrap-3": {}
 	}
 }

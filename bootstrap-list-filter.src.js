@@ -1,7 +1,8 @@
 
-$.fn.btsListFilter = function(inputEl, options){
+jQuery.fn.btsListFilter = function(inputEl, options){
 	
-	var searchlist$ = $(this),
+	var $ = jQuery,
+		searchlist$ = $(this),
 		inputEl$ = $(inputEl),
 		items$ = searchlist$,
 		callData;
@@ -34,7 +35,18 @@ $.fn.btsListFilter = function(inputEl, options){
 			//return value;
 		});
 	}
-
+		//TODO debouncer: function(func, timeout) {
+		// 	//esegue func alla fine del resize window  http://goo.gl/HGKwy
+		// 	var timeoutID;
+		// 	timeout = timeout || 300;
+		// 	return function () {
+		// 		var scope = this , args = arguments;
+		// 		clearTimeout( timeoutID );
+		// 		timeoutID = setTimeout( function () {
+		// 			func.apply( scope , Array.prototype.slice.call( args ) );
+		// 		}, timeout);
+		// 	}
+		// },
 	//TODO support for source url or array fo data
 	// switch($.type(options.source))
 	// {
