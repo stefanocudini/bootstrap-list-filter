@@ -7,12 +7,21 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 		items$ = searchlist$,
 		callData;
 
+	function tmpl(str, data) {
+		return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
+			return data[key] || '';
+		});
+	}
+
 	options = $.extend({
 		source: null,
 		eventKey: 'keyup',		
 		itemEl: '.list-group-item',
 		itemChild: null,
 		itemTmpl: '<a class="list-group-item" href="#"><span>{title}</span></a>',
+		itemNode: function(data) {
+			return tmpl(options.itemTmpl, data);
+		},
 		itemFilter: function(item, val) {
 			return $(item).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
 		}
@@ -24,17 +33,6 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 	if(options.itemChild)
 		items$ = items$.find(options.itemChild);
 
-	function tmpl(str, data) {
-		return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
-			return data[key] || '';
-			// if (value === undefined) {
-			// 	throw new Error('No value provided for variable ' + str);
-			// } else if (typeof value === 'function') {
-			// 	value = value(data);
-			// }
-			//return value;
-		});
-	}
 		//TODO debouncer: function(func, timeout) {
 		// 	//esegue func alla fine del resize window  http://goo.gl/HGKwy
 		// 	var timeoutID;
@@ -89,11 +87,7 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 				containsNot.hide();
 				searchlist$.find('.bts-dynamic-item').remove();
 				for(var i in data)
-				{
-					var itemHtml = tmpl(options.itemTmpl, data[i]);
-					if(itemHtml)
-						$(itemHtml).addClass('bts-dynamic-item').appendTo(searchlist$);
-				}
+					$(options.itemNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
 			});
 		}
 
@@ -106,3 +100,4 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 
 	return searchlist$;
 };
+

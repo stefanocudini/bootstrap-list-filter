@@ -21,6 +21,7 @@ Author: Stefano Cudini
 * [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
 * [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
 * [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
+* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
 
 #Source
 * [Github](https://github.com/stefanocudini/bootstrap-list-filter)
