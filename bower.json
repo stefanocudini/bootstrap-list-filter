@@ -2,7 +2,6 @@
 	"name": "bootstrap-list-filter",
 	"main": "bootstrap-list-filter.min.js",  
 	"version": "0.0.3",
-	"authors": ["Stefano Cudini <stefano.cudini@gmail.com>"],
 	"homepage": "https://github.com/stefanocudini/bootstrap-list-filter",
 	"license": "MIT",
 	"dependencies": {
@@ -10,6 +9,6 @@
 	},	
 	"ignore": [
 		"**/.*",
-		"node_modules",
+		"node_modules"
 	]
 }
