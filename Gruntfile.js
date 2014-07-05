@@ -54,7 +54,31 @@ grunt.initConfig({
 		readme: {
 			files: {
 				'index.html': ['README.md']
-			}
+			},
+			options: {
+				template: 'index.tmpl.html',
+				templateContext: function() {
+					var cfg = grunt.config();
+					cfg.title = cfg.pkg.name.replace(/-/g,' ');
+					cfg.ribbonurl = 'http://ghbtns.com/github-btn.html?user=stefanocudini&amp;repo='+cfg.pkg.name+'&amp;type=watch&amp;count=true';
+					cfg.giturl = 'https://github.com/stefanocudini/'+cfg.pkg.name;
+					cfg.biturl = 'https://bitbucket.org/zakis_/'+cfg.pkg.name;
+					cfg.npmurl = 'https://npmjs.org/package/'+cfg.pkg.name;
+					cfg.atmurl = 'http://atmospherejs.com/package/'+cfg.pkg.name;
+					cfg.examples = grunt.file.expand('examples/*.html');
+					cfg.image = grunt.file.expand('images/'+cfg.pkg.name+'.png');
+					console.log(cfg);
+					return cfg;
+				},
+				markdownOptions: {
+					gfm: true,
+					highlight: 'manual',
+					codeLines: {
+						before: '<div>',
+						after: '</div>'
+					}
+				}
+			}			
 		}
 	}
 });
