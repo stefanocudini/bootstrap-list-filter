@@ -13,7 +13,7 @@ Author: Stefano Cudini
 * complete mobile responsive
 * dynamic list generation
 * support preloaded list
-* custom html template
+* custom html template and node item
 * custom data format
 * filter by sub elements
 
