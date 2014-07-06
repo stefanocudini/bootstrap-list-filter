@@ -46,31 +46,17 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 		}
 	}, options);		
 
-	if(options.itemEl)
-		items$ = searchlist$.find(options.itemEl);
 
-	if(options.itemChild)
-		items$ = items$.find(options.itemChild);
-
-	//TODO support for sourceData url or array fo data
-	// switch($.type(options.sourceData))
-	// {
-	// 	case 'function':
-	// 		callData = options.sourceData;
-	// 	break;
-	// 	// case 'array':
-	// 	// break;
-	// 	// // case 'string':
-	// 	// // 	options.sourceData = function(text,callback) { $.get('search.php?q='+text, callback); };
-	// 	// // break;
-	// 	// case 'null':
-	// 	// case 'undefined':
-	// 	// default:
-	// }
 
 	inputEl$.on(options.eventKey, debouncer(function(e) {
 		
 		var val = $(this).val();
+
+		if(options.itemEl)
+			items$ = searchlist$.find(options.itemEl);
+
+		if(options.itemChild)
+			items$ = items$.find(options.itemChild);
 
 		var contains = items$.filter(function(){
 				return options.itemFilter(this, val);
