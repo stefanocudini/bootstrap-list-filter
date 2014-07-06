@@ -13,9 +13,24 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 		});
 	}
 
+	function debouncer(func, timeout) {
+		var timeoutID;
+		timeout = timeout || 300;
+		return function () {
+			var scope = this , args = arguments;
+			clearTimeout( timeoutID );
+			timeoutID = setTimeout( function () {
+				func.apply( scope , Array.prototype.slice.call( args ) );
+			}, timeout);
+		};
+	}
+
 	options = $.extend({
+		delay: 1000,
 		source: null,
-		eventKey: 'keyup',		
+		minLength: 2,
+		initial: true,
+		eventKey: 'keyup',	
 		itemEl: '.list-group-item',
 		itemChild: null,
 		itemTmpl: '<a class="list-group-item" href="#"><span>{title}</span></a>',
@@ -23,7 +38,12 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			return tmpl(options.itemTmpl, data);
 		},
 		itemFilter: function(item, val) {
-			return $(item).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
+			//text = text.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
+			var text = $(item).text(),
+				i = options.initial ? '^' : '',
+				regSearch = new RegExp(i + val,'i');
+			return regSearch.test( text );
+			//return $(item).text().toUpperCase().indexOf(text.toUpperCase()) >= 0;
 		}
 	}, options);		
 
@@ -33,18 +53,6 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 	if(options.itemChild)
 		items$ = items$.find(options.itemChild);
 
-		//TODO debouncer: function(func, timeout) {
-		// 	//esegue func alla fine del resize window  http://goo.gl/HGKwy
-		// 	var timeoutID;
-		// 	timeout = timeout || 300;
-		// 	return function () {
-		// 		var scope = this , args = arguments;
-		// 		clearTimeout( timeoutID );
-		// 		timeoutID = setTimeout( function () {
-		// 			func.apply( scope , Array.prototype.slice.call( args ) );
-		// 		}, timeout);
-		// 	}
-		// },
 	//TODO support for source url or array fo data
 	// switch($.type(options.source))
 	// {
@@ -61,7 +69,7 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 	// 	// default:
 	// }
 
-	inputEl$.on(options.eventKey, function(e) {
+	inputEl$.on(options.eventKey, debouncer(function(e) {
 		
 		var text = $(this).val();
 
@@ -75,28 +83,32 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			containsNot = containsNot.parents(options.itemEl).hide();
 		}
 
-		contains.show();
-		containsNot.hide();
-
-		if(text!=='' && $.type(options.source)==='function')
+		if(text!=='' && text.length >= options.minLength)
 		{
-			contains.hide();
+			contains.show();
 			containsNot.hide();
-			options.source.call(this, text, function(data) {
+
+			if($.type(options.source)==='function')
+			{
 				contains.hide();
 				containsNot.hide();
-				searchlist$.find('.bts-dynamic-item').remove();
-				for(var i in data)
-					$(options.itemNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
-			});
-		}
+				options.source.call(this, text, function(data) {
+					contains.hide();
+					containsNot.hide();
+					searchlist$.find('.bts-dynamic-item').remove();
+					for(var i in data)
+						$(options.itemNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
+				});
+			}
 
-		if (text === '') {
+		}
+		else
+		{
 			contains.show();
 			containsNot.show();
 			searchlist$.find('.bts-dynamic-item').remove();
 		}
-	});
+	}, options.delay));
 
 	return searchlist$;
 };

@@ -1,7 +1,7 @@
 {
 	"name": "bootstrap-list-filter",
+	"version": "0.0.6",
 	"main": "bootstrap-list-filter.min.js",  
-	"version": "0.0.5",
 	"homepage": "https://github.com/stefanocudini/bootstrap-list-filter",
 	"license": "MIT",
 	"dependencies": {
