@@ -27,16 +27,16 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 
 	options = $.extend({
 		delay: 300,
-		source: null,
-		minLength: 2,
+		minLength: 1,
 		initial: true,
-		eventKey: 'keyup',	
-		itemEl: '.list-group-item',
-		itemChild: null,
-		itemTmpl: '<a class="list-group-item" href="#"><span>{title}</span></a>',
-		itemNode: function(data) {
-			return tmpl(options.itemTmpl, data);
+		eventKey: 'keyup',
+		sourceData: null,
+		sourceTmpl: '<a class="list-group-item" href="#"><span>{title}</span></a>',
+		sourceNode: function(data) {
+			return tmpl(options.sourceTmpl, data);
 		},
+		itemEl: '.list-group-item',
+		itemChild: null,	
 		itemFilter: function(item, val) {
 			val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
 			var text = $(item).text(),
@@ -52,16 +52,16 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 	if(options.itemChild)
 		items$ = items$.find(options.itemChild);
 
-	//TODO support for source url or array fo data
-	// switch($.type(options.source))
+	//TODO support for sourceData url or array fo data
+	// switch($.type(options.sourceData))
 	// {
 	// 	case 'function':
-	// 		callData = options.source;
+	// 		callData = options.sourceData;
 	// 	break;
 	// 	// case 'array':
 	// 	// break;
 	// 	// // case 'string':
-	// 	// // 	options.source = function(text,callback) { $.get('search.php?q='+text, callback); };
+	// 	// // 	options.sourceData = function(text,callback) { $.get('search.php?q='+text, callback); };
 	// 	// // break;
 	// 	// case 'null':
 	// 	// case 'undefined':
@@ -87,16 +87,16 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			contains.show();
 			containsNot.hide();
 
-			if($.type(options.source)==='function')
+			if($.type(options.sourceData)==='function')
 			{
 				contains.hide();
 				containsNot.hide();
-				options.source.call(this, val, function(data) {
+				options.sourceData.call(this, val, function(data) {
 					contains.hide();
 					containsNot.hide();
 					searchlist$.find('.bts-dynamic-item').remove();
 					for(var i in data)
-						$(options.itemNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
+						$(options.sourceNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
 				});
 			}
 

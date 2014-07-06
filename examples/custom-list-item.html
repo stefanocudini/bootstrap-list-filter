@@ -31,7 +31,10 @@
 <script src="../bootstrap-list-filter.src.js"></script>
 <script>
 $('#searchlist').btsListFilter('#searchinput', {
-	itemNode: function(data) {
+	sourceData: function(text, callback) {
+		return $.get('search.php?q='+text, callback);
+	},	
+	sourceNode: function(data) {
 		return $('<a class="btn btn-default">'+data.title+'</a>')
 			.on('mouseenter',function(e) {
 				$(this).addClass('btn-primary');
@@ -44,9 +47,6 @@ $('#searchlist').btsListFilter('#searchinput', {
 				$('#searchinput').val( $(this).text() );
 				$('#searchlist').empty();
 			});
-	},
-	source: function(text, callback) {
-		return $.get('search.php?q='+text, callback);
 	}
 });
 </script>
