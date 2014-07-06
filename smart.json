@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-list-filter",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "Search widget to filter Bootstrap lists",
 	"homepage": "http://labs.easyblog.it/bootstrap-list-filter/",
 	"author": "Stefano Cudini <stefano.cudini@gmail.com>",
