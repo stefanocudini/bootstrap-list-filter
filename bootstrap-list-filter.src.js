@@ -26,7 +26,7 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 	}
 
 	options = $.extend({
-		delay: 1000,
+		delay: 300,
 		source: null,
 		minLength: 2,
 		initial: true,
@@ -38,12 +38,11 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			return tmpl(options.itemTmpl, data);
 		},
 		itemFilter: function(item, val) {
-			//text = text.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
+			val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
 			var text = $(item).text(),
 				i = options.initial ? '^' : '',
 				regSearch = new RegExp(i + val,'i');
 			return regSearch.test( text );
-			//return $(item).text().toUpperCase().indexOf(text.toUpperCase()) >= 0;
 		}
 	}, options);		
 
@@ -71,10 +70,10 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 
 	inputEl$.on(options.eventKey, debouncer(function(e) {
 		
-		var text = $(this).val();
+		var val = $(this).val();
 
 		var contains = items$.filter(function(){
-				return options.itemFilter(this, text);
+				return options.itemFilter(this, val);
 			}),
 			containsNot = items$.not(contains);
 
@@ -83,7 +82,7 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			containsNot = containsNot.parents(options.itemEl).hide();
 		}
 
-		if(text!=='' && text.length >= options.minLength)
+		if(val!=='' && val.length >= options.minLength)
 		{
 			contains.show();
 			containsNot.hide();
@@ -92,7 +91,7 @@ jQuery.fn.btsListFilter = function(inputEl, options){
 			{
 				contains.hide();
 				containsNot.hide();
-				options.source.call(this, text, function(data) {
+				options.source.call(this, val, function(data) {
 					contains.hide();
 					containsNot.hide();
 					searchlist$.find('.bts-dynamic-item').remove();
