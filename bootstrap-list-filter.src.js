@@ -5,7 +5,8 @@
 		var searchlist$ = $(this),
 			inputEl$ = $(inputEl),
 			items$ = searchlist$,
-			callData;
+			callData,
+			callReq;	//last callData execution
 
 		function tmpl(str, data) {
 			return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
@@ -77,7 +78,12 @@
 				{
 					contains.hide();
 					containsNot.hide();
-					options.sourceData.call(this, val, function(data) {
+					
+					if(callReq && $.isFunction(callReq.abort))
+						callReq.abort();	//prevent parallel requests
+
+					callReq = options.sourceData.call(this, val, function(data) {
+						callReq = null;
 						contains.hide();
 						containsNot.hide();
 						searchlist$.find('.bts-dynamic-item').remove();

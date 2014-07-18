@@ -67,7 +67,7 @@ grunt.initConfig({
 					cfg.atmurl = 'http://atmospherejs.com/package/'+cfg.pkg.name;
 					cfg.examples = grunt.file.expand('examples/*.html');
 					cfg.image = grunt.file.expand('images/'+cfg.pkg.name+'.png');
-					console.log(cfg);
+					//console.log(cfg);
 					return cfg;
 				},
 				markdownOptions: {
