@@ -79,9 +79,14 @@
 					contains.hide();
 					containsNot.hide();
 					
-					if(callReq && $.isFunction(callReq.abort))
-						callReq.abort();	//prevent parallel requests
-
+					if(callReq)
+					{
+						if($.isFunction(callReq.abort))
+							callReq.abort();
+						else if($.isFunction(callReq.stop))
+							callReq.stop();
+					}
+					
 					callReq = options.sourceData.call(this, val, function(data) {
 						callReq = null;
 						contains.hide();
