@@ -31,6 +31,7 @@
 			minLength: 1,
 			initial: true,
 			eventKey: 'keyup',
+			resetOnBlur: true,
 			sourceData: null,
 			sourceTmpl: '<a class="list-group-item" href="#"><span>{title}</span></a>',
 			sourceNode: function(data) {
@@ -104,10 +105,12 @@
 				containsNot.show();
 				searchlist$.find('.bts-dynamic-item').remove();
 			}
-		}, options.delay))
-		.on('blur', function(e) {
-			$(this).val('').trigger(options.eventKey);
-		});
+		}, options.delay));
+
+		if(options.resetOnBlur)
+			inputEl$.on('blur', function(e) {
+				$(this).val('').trigger(options.eventKey);
+			});
 
 		return searchlist$;
 	};
