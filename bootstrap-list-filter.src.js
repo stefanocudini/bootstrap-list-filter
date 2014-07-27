@@ -40,7 +40,10 @@
 			itemEl: '.list-group-item',
 			itemChild: null,	
 			itemFilter: function(item, val) {
-				val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
+				//val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
+				//val = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+				val = val.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
+				
 				var text = $(item).text(),
 					i = options.initial ? '^' : '',
 					regSearch = new RegExp(i + val,'i');
