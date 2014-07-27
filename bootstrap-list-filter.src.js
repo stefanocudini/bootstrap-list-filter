@@ -2,7 +2,8 @@
 (function($) {
 	$.fn.btsListFilter = function(inputEl, options) {
 		
-		var searchlist$ = $(this),
+		var searchlist = this,
+			searchlist$ = $(this),
 			inputEl$ = $(inputEl),
 			items$ = searchlist$,
 			callData,
@@ -64,7 +65,7 @@
 				items$ = items$.find(options.itemChild);
 
 			var contains = items$.filter(function(){
-					return options.itemFilter(this, val);
+					return options.itemFilter.call(searchlist, val);
 				}),
 				containsNot = items$.not(contains);
 
@@ -91,13 +92,13 @@
 							callReq.stop();
 					}
 					
-					callReq = options.sourceData.call(this, val, function(data) {
+					callReq = options.sourceData.call(searchlist, val, function(data) {
 						callReq = null;
 						contains.hide();
 						containsNot.hide();
 						searchlist$.find('.bts-dynamic-item').remove();
 						for(var i in data)
-							$(options.sourceNode(data[i])).addClass('bts-dynamic-item').appendTo(searchlist$);
+							$( options.sourceNode.call(searchlist, data[i]) ).addClass('bts-dynamic-item').appendTo(searchlist$);
 					});
 				}
 
