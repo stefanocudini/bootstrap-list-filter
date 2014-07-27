@@ -65,7 +65,7 @@
 				items$ = items$.find(options.itemChild);
 
 			var contains = items$.filter(function(){
-					return options.itemFilter.call(searchlist, val);
+					return options.itemFilter.call(searchlist, this, val);
 				}),
 				containsNot = items$.not(contains);
 
