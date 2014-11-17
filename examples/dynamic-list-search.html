@@ -40,7 +40,9 @@
 $('#searchlist').btsListFilter('#searchinput', {
 	sourceTmpl: '<a class="list-group-item" href="http://osm.org/#map=12/{lat}/{lon}"><span>{title}</span></a>',
 	sourceData: function(text, callback) {
-		return $.get('search.php?q='+text, callback);
+		return $.getJSON('search.php?q='+text, function(json) {
+			callback(json);
+		});
 	}
 });
 </script>

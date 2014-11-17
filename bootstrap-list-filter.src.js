@@ -38,6 +38,9 @@
 			sourceNode: function(data) {
 				return tmpl(options.sourceTmpl, data);
 			},
+			emptyNode: function(data) {
+				return '<a class="list-group-item well" href="#"><span>No Results</span></a>';
+			},
 			itemEl: '.list-group-item',
 			itemChild: null,	
 			itemFilter: function(item, val) {
@@ -97,8 +100,12 @@
 						contains.hide();
 						containsNot.hide();
 						searchlist$.find('.bts-dynamic-item').remove();
-						for(var i in data)
-							$( options.sourceNode.call(searchlist, data[i]) ).addClass('bts-dynamic-item').appendTo(searchlist$);
+
+						if(!data || data.length===0)
+							$( options.emptyNode.call(searchlist) ).addClass('bts-dynamic-item').appendTo(searchlist$);
+						else
+							for(var i in data)
+								$( options.sourceNode.call(searchlist, data[i]) ).addClass('bts-dynamic-item').appendTo(searchlist$);
 					});
 				}
 

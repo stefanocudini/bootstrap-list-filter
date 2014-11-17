@@ -9,13 +9,13 @@ grunt.initConfig({
 		'/* \n'+
 		' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n'+
 		' * \n'+
-		' * Copyright 2014 <%= pkg.author.name %> \n'+
+		' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> \n'+
 		' * <%= pkg.author.email %> \n'+
 		' * <%= pkg.author.url %> \n'+
 		' * \n'+
 		' * Licensed under the <%= pkg.license %> license. \n'+
 		' * \n'+
-		' * Demo: \n'+
+		' * Demos: \n'+
 		' * <%= pkg.homepage %> \n'+
 		' * \n'+
 		' * Source: \n'+
@@ -49,7 +49,7 @@ grunt.initConfig({
 				'bootstrap-list-filter.min.js': ['bootstrap-list-filter.src.js']
 			}
 		}
-	},	
+	},
 	markdown: {
 		readme: {
 			files: {
