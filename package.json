@@ -16,8 +16,7 @@
   "keywords": [
     "bootstrap",
     "jquery",
-    "list",
-    "filter"
+	"javascript"
   ],
   "dependencies": {
     "bootstrap": "*"
