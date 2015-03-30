@@ -49,3 +49,18 @@ Author: Stefano Cudini
 	$('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
 </script>
 ```
+
+#Options
+
+* delay        *millisecond before apply filter*
+* minLength    *min string lentgh searched*
+* initial      *search only initial text (default: true)*
+* eventKey     *event digit (default: 'keyup')*
+* resetOnBlur  *auto reset selection*
+* sourceData   *function generate data source(receive: text, callback)*
+* sourceTmpl   *html template contains {title} placeholder*
+* sourceNode   *function builder DOM html fragment (default: sourceTmpl)*
+* emptyNode    *function builder for empty result*
+* itemEl       *item selector (default: .list-group-item)*,
+* itemChild    *sub item selector (default: .list-group-item)*,
+* itemFilter   *function for filter results(receive: text, item)*
