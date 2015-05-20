@@ -1,6 +1,8 @@
 
 (function($) {
 	$.fn.btsListFilter = function(inputEl, options) {
+
+		'use strict';
 		
 		var searchlist = this,
 			searchlist$ = $(this),
@@ -108,6 +110,7 @@
 								$( options.sourceNode.call(searchlist, data[i]) ).addClass('bts-dynamic-item').appendTo(searchlist$);
 					});
 				} else if(contains.length===0) {
+					searchlist$.find('.bts-dynamic-item').remove();
 					$( options.emptyNode.call(searchlist) ).addClass('bts-dynamic-item').appendTo(searchlist$);
 				}
 
