@@ -111,9 +111,12 @@
 							for(var i in data)
 								$( opts.sourceNode.call(searchlist, data[i]) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 					});
-				} else if(contains.length===0) {
-					searchlist$.find('.'+opts.itemClassTmp).remove();
-					$( opts.emptyNode.call(searchlist) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+				} 
+				else {
+                    searchlist$.find('.'+opts.itemClassTmp).remove();
+                    
+                    if(contains.length===0)
+						$( opts.emptyNode.call(searchlist) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 				}
 
 			}
