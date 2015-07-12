@@ -22,6 +22,9 @@
   "dependencies": {
     "bootstrap": "*"
   },
+  "peerDependencies": {
+    "bootstrap": "^3.4.5"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
