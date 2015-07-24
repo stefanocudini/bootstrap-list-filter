@@ -33,6 +33,7 @@
 			delay: 300,
 			minLength: 1,
 			initial: true,
+			casesensitive: false,
 			eventKey: 'keyup',
 			resetOnBlur: true,
 			sourceData: null,
@@ -52,8 +53,8 @@
 				val = val && val.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
 				
 				var text = $(item).text(),
-					i = opts.initial ? '^' : '',
-					regSearch = new RegExp(i + val,'i');
+					i = opts.initial?'^':'',
+					regSearch = new RegExp(i + val, opts.casesensitive?'':'i');
 				return regSearch.test( text );
 			}
 		}, opts);		

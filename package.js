@@ -1,4 +1,6 @@
 Package.describe({
+	version: "0.2.1",
+	name: "bootstrap-list-filter",
 	summary: "bootstrap-list-filter"
 });
 
