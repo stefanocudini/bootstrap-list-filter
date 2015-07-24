@@ -17,6 +17,7 @@ Author: Stefano Cudini
 * custom data format
 * prevent parallel requests
 * filter by sub elements
+* search text in case sensitive
 
 **Demo online:**
 * [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
