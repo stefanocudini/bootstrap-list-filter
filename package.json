@@ -23,7 +23,7 @@
     "bootstrap": "*"
   },
   "peerDependencies": {
-    "bootstrap": "^3.4.5"
+    "bootstrap": "^3.3.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
