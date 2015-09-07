@@ -18,6 +18,7 @@ Author: Stefano Cudini
 * prevent parallel requests
 * filter by sub elements
 * search text in case sensitive
+* search text in initial position or full
 
 **Demo online:**
 * [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
