@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>example</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<head>
+
+<body>
+
+<div class="container">
+
+	<h2><a href="../">Bootstrap List Filter</a></h2>
+
+	<h3>Cancel Button Example</h3>
+		
+	<form role="form">
+		<div class="form-group">
+			<input class="form-control" id="searchinput" type="search" placeholder="Search..." />
+		</div>
+		<div id="searchlist" class="list-group">
+			<a class="list-group-item" href="#">aquamarine</a>
+			<a class="list-group-item" href="#">black</a>
+			<a class="list-group-item" href="#">blue</a>
+			<a class="list-group-item" href="#">chocolate</a>
+			<a class="list-group-item" href="#">coral</a>
+			<a class="list-group-item" href="#">cyan</a>
+			<a class="list-group-item" href="#">darkblue</a>
+			<a class="list-group-item" href="#">Darkred</a>
+			<a class="list-group-item" href="#">Darkgray</a>
+			<a class="list-group-item" href="#">dodgerblue</a>
+			<a class="list-group-item" href="#">gray</a>
+			<a class="list-group-item" href="#">green</a>
+			<a class="list-group-item" href="#">greenyellow</a>
+			<a class="list-group-item" href="#">red</a>
+			<a class="list-group-item" href="#">rosybrown</a>
+			<a class="list-group-item" href="#">royalblue</a>
+			<a class="list-group-item" href="#">salmon</a>
+			<a class="list-group-item" href="#">seagreen</a>
+			<a class="list-group-item" href="#">silver</a>
+			<a class="list-group-item" href="#">skyblue</a>
+			<a class="list-group-item" href="#">yellow</a>
+		</div>
+	</form>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../bootstrap-list-filter.src.js"></script>
+<script>
+
+$('#searchlist').btsListFilter('#searchinput', {
+});
+
+</script>
+<script src="/labs-common.js"></script>
+</body>
+</html>

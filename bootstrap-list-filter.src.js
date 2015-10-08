@@ -4,30 +4,13 @@
 
 		'use strict';
 		
-		var searchlist = this,
+		var self = this,
 			searchlist$ = $(this),
 			inputEl$ = $(inputEl),
+			cancelEl$,
 			items$ = searchlist$,
 			callData,
 			callReq;	//last callData execution
-
-		function tmpl(str, data) {
-			return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
-				return data[key] || '';
-			});
-		}
-
-		function debouncer(func, timeout) {
-			var timeoutID;
-			timeout = timeout || 300;
-			return function () {
-				var scope = this , args = arguments;
-				clearTimeout( timeoutID );
-				timeoutID = setTimeout( function () {
-					func.apply( scope , Array.prototype.slice.call( args ) );
-				}, timeout);
-			};
-		}
 
 		opts = $.extend({
 			delay: 300,
@@ -56,10 +39,46 @@
 					i = opts.initial?'^':'',
 					regSearch = new RegExp(i + val, opts.casesensitive?'':'i');
 				return regSearch.test( text );
+			},
+			cancelNode: function() {
+				return '<span class="btn glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
 			}
-		}, opts);		
+		}, opts);	
 
+		function tmpl(str, data) {
+			return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
+				return data[key] || '';
+			});
+		}
 
+		function debouncer(func, timeout) {
+			var timeoutID;
+			timeout = timeout || 300;
+			return function () {
+				var scope = this , args = arguments;
+				clearTimeout( timeoutID );
+				timeoutID = setTimeout( function () {
+					func.apply( scope , Array.prototype.slice.call( args ) );
+				}, timeout);
+			};
+		}
+
+		self.reset = function() {
+			inputEl$.val('').trigger(opts.eventKey);
+		};
+
+		if($.isFunction(opts.cancelNode)) {
+
+			cancelEl$ = $(opts.cancelNode.call(self));
+
+			inputEl$.after( cancelEl$ );
+			inputEl$.parents('.form-group').addClass('has-feedback');
+			
+			if(!inputEl$.prev().is('.control-label'))
+				cancelEl$.css({top: 0})
+
+			cancelEl$.on('click', self.reset);
+		}
 
 		inputEl$.on(opts.eventKey, debouncer(function(e) {
 			
@@ -72,7 +91,7 @@
 				items$ = items$.find(opts.itemChild);
 
 			var contains = items$.filter(function(){
-					return opts.itemFilter.call(searchlist, this, val);
+					return opts.itemFilter.call(self, this, val);
 				}),
 				containsNot = items$.not(contains);
 
@@ -99,7 +118,7 @@
 							callReq.stop();
 					}
 					
-					callReq = opts.sourceData.call(searchlist, val, function(data) {
+					callReq = opts.sourceData.call(self, val, function(data) {
 						callReq = null;
 						contains.hide();
 						containsNot.hide();
@@ -107,17 +126,17 @@
 						
 
 						if(!data || data.length===0)
-							$( opts.emptyNode.call(searchlist) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+							$( opts.emptyNode.call(self) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 						else
 							for(var i in data)
-								$( opts.sourceNode.call(searchlist, data[i]) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+								$( opts.sourceNode.call(self, data[i]) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 					});
 				} 
 				else {
                     searchlist$.find('.'+opts.itemClassTmp).remove();
                     
                     if(contains.length===0)
-						$( opts.emptyNode.call(searchlist) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+						$( opts.emptyNode.call(self) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 				}
 
 			}
@@ -131,7 +150,7 @@
 
 		if(opts.resetOnBlur)
 			inputEl$.on('blur', function(e) {
-				$(this).val('').trigger(opts.eventKey);
+				self.reset();
 			});
 
 		return searchlist$;
