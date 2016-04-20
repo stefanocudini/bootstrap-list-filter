@@ -130,7 +130,7 @@
 						
 
 						if(!data || data.length===0)
-							$( opts.emptyNode.call(self) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+							$( opts.emptyNode.call(self, val) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 						else
 							for(var i in data)
 								$( opts.sourceNode.call(self, data[i]) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
@@ -140,7 +140,7 @@
                     searchlist$.find('.'+opts.itemClassTmp).remove();
                     
                     if(contains.length===0)
-						$( opts.emptyNode.call(self) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+						$( opts.emptyNode.call(self, val) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 				}
 
 			}

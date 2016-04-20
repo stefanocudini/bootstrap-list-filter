@@ -33,7 +33,7 @@
 $('#searchlist').btsListFilter('#searchinput', {
 	sourceData: function(text, callback) {
 		return $.get('search.php?q='+text, callback);
-	},	
+	},
 	sourceNode: function(data) {
 		return $('<a class="btn btn-default">'+data.title+'</a>')
 			.on('mouseenter',function(e) {
@@ -47,6 +47,9 @@ $('#searchlist').btsListFilter('#searchinput', {
 				$('#searchinput').val( $(this).text() );
 				$('#searchlist').empty();
 			});
+	},
+	emptyNode: function(data) {
+		return $('<a class="list-group-item well" href="#"><span>Not found <b>"'+data+'"</b></a>');
 	}
 });
 </script>
