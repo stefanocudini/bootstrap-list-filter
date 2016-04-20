@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>example</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<head>
+
+<body>
+
+<div class="container">
+
+	<h2><a href="../">Bootstrap List Filter</a></h2>
+
+	<h3>Search on Multiple Field</h3>
+
+	<form role="form" class="form-inline">
+		<div class="form-group">
+			<input class="form-control" id="searchinput" type="search" placeholder="Search City..." />
+		</div>
+		<div id="searchlist" class="btn-group">
+			<!-- FILLED DYNAMICALLY -->
+		</div>
+	</form>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../bootstrap-list-filter.src.js"></script>
+<script src="restaurants.geojson.js"></script>
+<script>
+
+/* Restaurants define in restaurants.geojson.js */
+var keys = {};
+
+$('#searchlist').btsListFilter('#searchinput', {
+	sourceData: function(text, callback) {
+		callback( Restaurants.features );
+	},	
+	sourceNode: function(data) {
+		//console.log(data.properties)
+		var $node = $('<a class="btn btn-default">'+(data.properties.name||'')+'</a>');
+		$node.data(data.properties);
+		return $node;
+	}
+});
+</script>
+<script src="/labs-common.js"></script>
+</body>
+</html>

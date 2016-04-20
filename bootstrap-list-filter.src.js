@@ -12,6 +12,23 @@
 			callData,
 			callReq;	//last callData execution
 
+		function tmpl(str, data) {
+			return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
+				return data[key] || '';
+			});
+		}
+
+		function defaultItemFilter(item, val) {
+			val = val && val.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
+			//sanitize regexp
+
+			var text = $(item).text(),
+				i = opts.initial ? '^' : '',
+				regSearch = new RegExp(i + val, opts.casesensitive ? '' : 'i');
+
+			return regSearch.test( text );
+		}
+		
 		opts = $.extend({
 			delay: 300,
 			minLength: 1,
@@ -27,29 +44,14 @@
 			emptyNode: function(data) {
 				return '<a class="list-group-item well" href="#"><span>No Results</span></a>';
 			},
+			cancelNode: function() {
+				return '<span class="btn glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
+			},
 			itemClassTmp: 'bts-dynamic-item',
 			itemEl: '.list-group-item',
 			itemChild: null,
-			itemFilter: function(item, val) {
-				//val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
-				//val = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-				val = val && val.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
-				
-				var text = $(item).text(),
-					i = opts.initial?'^':'',
-					regSearch = new RegExp(i + val, opts.casesensitive?'':'i');
-				return regSearch.test( text );
-			},
-			cancelNode: function() {
-				return '<span class="btn glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
-			}
-		}, opts);	
-
-		function tmpl(str, data) {
-			return str.replace(/\{ *([\w_]+) *\}/g, function (str, key) {
-				return data[key] || '';
-			});
-		}
+			itemFilter: defaultItemFilter
+		}, opts);
 
 		function debouncer(func, timeout) {
 			var timeoutID;
