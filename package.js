@@ -6,6 +6,6 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-	api.use('twbs:bootstrap', 'client');
+	api.use('twbs:bootstrap@3.3.6', 'client');
 	api.addFiles('bootstrap-list-filter.min.js', 'client');
 });
