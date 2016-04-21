@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-list-filter",
   "version": "0.2.6",
-  "description": "Search widget to filter Bootstrap lists",
+  "description": "Search elements in Bootstrap lists",
   "main": "bootstrap-list-filter.src.js",
   "repository": {
     "type": "git",
