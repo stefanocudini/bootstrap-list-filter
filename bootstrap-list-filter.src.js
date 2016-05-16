@@ -86,7 +86,7 @@
 
 		if($.isFunction(opts.cancelNode)) {
 
-			cancelEl$ = $(opts.cancelNode.call(self));
+			cancelEl$ = $(opts.cancelNode.call(self)).hide();
 
 			inputEl$.after( cancelEl$ );
 			inputEl$.parents('.form-group').addClass('has-feedback');
@@ -123,6 +123,7 @@
 			{
 				contains.show();
 				containsNot.hide();
+				cancelEl$.show();
 
 				if($.type(opts.sourceData)==='function')
 				{
@@ -163,6 +164,7 @@
 			{
 				contains.show();
 				containsNot.show();
+				cancelEl$.hide();
 				searchlist$.find('.'+opts.itemClassTmp).remove();
 			}
 		}, opts.delay));

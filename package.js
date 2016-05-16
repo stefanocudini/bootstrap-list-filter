@@ -1,5 +1,5 @@
 Package.describe({
-	version: "0.2.6",
+	version: "0.3.0",
 	name: "stefcud:bootstrap-list-filter",
 	summary: "bootstrap-list-filter",
 	git: "https://github.com/stefanocudini/bootstrap-list-filter.git"
