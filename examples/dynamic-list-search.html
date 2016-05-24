@@ -6,6 +6,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="white">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style type="text/css">
+.loading {
+	background: url('../images/loader.gif') no-repeat center center #fff;
+	min-height: 50px;
+	border-radius: 4px;
+	border: 1px dashed #eee
+}
+</style>
 <head>
 
 <body>
@@ -38,6 +46,7 @@
 <script>
 
 $('#searchlist').btsListFilter('#searchinput', {
+	loadingClass: 'loading',
 	sourceTmpl: '<a class="list-group-item" href="http://osm.org/#map=12/{lat}/{lon}"><span>{title}</span></a>',
 	sourceData: function(text, callback) {
 		return $.getJSON('search.php?q='+text, function(json) {

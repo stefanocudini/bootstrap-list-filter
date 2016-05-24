@@ -62,6 +62,7 @@
 			cancelNode: function() {
 				return '<span class="btn glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
 			},
+			loadingClass: 'bts-loading-list',
 			itemClassTmp: 'bts-dynamic-item',
 			itemEl: '.list-group-item',
 			itemChild: null,
@@ -138,18 +139,20 @@
 							callReq.stop();
 					}
 					
+					searchlist$.addClass(opts.loadingClass);
 					callReq = opts.sourceData.call(self, val, function(data) {
 						callReq = null;
 						contains.hide();
 						containsNot.hide();
 						searchlist$.find('.'+opts.itemClassTmp).remove();
-						
 
 						if(!data || data.length===0)
 							$( opts.emptyNode.call(self, val) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
 						else
 							for(var i in data)
 								$( opts.sourceNode.call(self, data[i]) ).addClass(opts.itemClassTmp).appendTo(searchlist$);
+
+						searchlist$.removeClass(opts.loadingClass);
 					});
 				} 
 				else {
