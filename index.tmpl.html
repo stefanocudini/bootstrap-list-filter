@@ -120,6 +120,23 @@ li {
 	</ul>
 </div>
 <div class="box">
+	<h4>Settings</h4>
+	<ul id="ff">
+		<li><em>delay:</em>      millisecond before apply filter</li>
+		<li><em>minLength:</em>  min string lentgh searched</li>
+		<li><em>initial:</em>    search only initial text (default: true)</li>
+		<li><em>eventKey:</em>   event digit (default: 'keyup')</li>
+		<li><em>resetOnBlur:</em>auto reset selection</li>
+		<li><em>sourceData:</em> function generate data source(receive: text, callback)</li>
+		<li><em>sourceTmpl:</em> html template contains {title} placeholder</li>
+		<li><em>sourceNode:</em> function builder DOM html fragment (default: sourceTmpl)</li>
+		<li><em>emptyNode:</em>  function builder for empty result</li>
+		<li><em>itemEl:</em>     item selector (default: .list-group-item)*</li>
+		<li><em>itemChild:</em>  sub item selector (default: .list-group-item)*</li>
+		<li><em>itemFilter:</em> function for filter results(receive: text, item)</li>
+	</ul>
+</div>
+<div class="box">
 	<h4>Code repositories</h4>
 	<a target="_blank" href="<%=giturl%>">Github.com</a>
 	<br />	
