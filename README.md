@@ -18,7 +18,13 @@ Author: Stefano Cudini
 * filter by sub elements
 * search text in case sensitive
 
-**Settings:**
+**Demo online:**
+* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
+* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
+* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
+* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
+
+#Settings:
 * **delay:**      millisecond before apply filter
 * **minLength:**  min string lentgh searched
 * **initial:**    search only initial text (default: true)
@@ -31,12 +37,6 @@ Author: Stefano Cudini
 * **itemEl:**     item selector (default: .list-group-item)
 * **itemChild:**  sub item selector (default: .list-group-item)
 * **itemFilter:** function for filter results(receive: text, item)
-
-**Demo online:**
-* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
-* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
-* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
-* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
 
 #Source
 * [Github](https://github.com/stefanocudini/bootstrap-list-filter)
