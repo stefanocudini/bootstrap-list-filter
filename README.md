@@ -7,6 +7,12 @@ Search widget to filter Bootstrap lists
 
 Author: Stefano Cudini [labs.easyblog.it](http://labs.easyblog.it/)
 
+**Demo online:**
+* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
+* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
+* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
+* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
+
 **Features:**
 * complete mobile responsive
 * support preloaded list
@@ -16,11 +22,6 @@ Author: Stefano Cudini [labs.easyblog.it](http://labs.easyblog.it/)
 * filter by sub elements
 * search text in case sensitive
 
-**Demo online:**
-* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
-* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
-* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
-* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
 
 # Settings:
 * **delay:**      millisecond before apply filter
