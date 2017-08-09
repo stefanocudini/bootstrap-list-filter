@@ -5,9 +5,7 @@ Search widget to filter Bootstrap lists
 
 *Compatible with Bootstrap 3!*
 
-Author: Stefano Cudini
-
-[labs.easyblog.it](http://labs.easyblog.it/)
+Author: Stefano Cudini [labs.easyblog.it](http://labs.easyblog.it/)
 
 **Features:**
 * complete mobile responsive
