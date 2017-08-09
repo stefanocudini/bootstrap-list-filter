@@ -23,7 +23,7 @@ Author: Stefano Cudini [labs.easyblog.it](http://labs.easyblog.it/)
 * search text in case sensitive
 
 
-# Settings:
+# Options:
 * **delay:**       millisecond before apply filter
 * **minLength:**   min string lentgh searched
 * **initial:**     search only initial text (default: true)
