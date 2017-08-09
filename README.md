@@ -24,7 +24,7 @@ Author: Stefano Cudini
 * [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
 * [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
 
-#Settings:
+# Settings:
 * **delay:**      millisecond before apply filter
 * **minLength:**  min string lentgh searched
 * **initial:**    search only initial text (default: true)
@@ -38,13 +38,13 @@ Author: Stefano Cudini
 * **itemChild:**  sub item selector (default: .list-group-item)
 * **itemFilter:** function for filter results(receive: text, item)
 
-#Source
+# Source
 * [Github](https://github.com/stefanocudini/bootstrap-list-filter)
 * [NPM](https://npmjs.org/package/bootstrap-list-filter)  
 
 ![Image](https://raw.githubusercontent.com/stefanocudini/bootstrap-list-filter/master/images/bootstrap-list-filter.png)
 
-#Usage
+# Usage
 ```html
 <form role="form">
 	<div class="form-group">
