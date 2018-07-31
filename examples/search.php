@@ -17,7 +17,7 @@ $fdata = array_values($fdata);	//reset $fdata indexs
 
 $JSON = json_encode($fdata,true);
 
-sleep(2);
+sleep(1);
 //simulate connection latency for localhost tests
 @header("Content-type: application/json; charset=utf-8");
 
