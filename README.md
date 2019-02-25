@@ -1,6 +1,9 @@
 Bootstrap List Filter
 ============
 
+[![npm version](https://badge.fury.io/js/bootstrap-list-filter.svg)](http://badge.fury.io/js/bootstrap-list-filter)
+
+
 Search widget to filter Bootstrap lists
 
 **Compatible with Bootstrap 3.3.7!**
