@@ -1,20 +1,20 @@
 Bootstrap List Filter
 ============
 
-[![npm version](https://badge.fury.io/js/bootstrap-list-filter.svg)](http://badge.fury.io/js/bootstrap-list-filter)
+[![npm version](https://badge.fury.io/js/bootstrap-list-filter.svg)](https://badge.fury.io/js/bootstrap-list-filter)
 
 
 Search widget to filter Bootstrap lists
 
 **Compatible with Bootstrap 3.3.7!**
 
-Author: Stefano Cudini [labs.easyblog.it](http://labs.easyblog.it/)
+Author: Stefano Cudini [opengeo.tech](https://opengeo.tech/)
 
 **Demo online:**
-* [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
-* [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)
-* [Ajax example](http://labs.easyblog.it/bootstrap-list-filter/examples/dynamic-list-search.html)
-* [Custom items example](http://labs.easyblog.it/bootstrap-list-filter/examples/custom-list-item.html)
+* [Homepage](https://opengeo.tech/bootstrap-list-filter/)
+* [Static example](https://opengeo.tech/bootstrap-list-filter/examples/static.html)
+* [Ajax example](https://opengeo.tech/bootstrap-list-filter/examples/dynamic-list-search.html)
+* [Custom items example](https://opengeo.tech/bootstrap-list-filter/examples/custom-list-item.html)
 
 **Features:**
 * complete mobile responsive

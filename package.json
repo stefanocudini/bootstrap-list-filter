@@ -7,11 +7,11 @@
     "type": "git",
     "url": "git@github.com:stefanocudini/bootstrap-list-filter.git"
   },
-  "homepage": "http://labs.easyblog.it/bootstrap-list-filter/",
+  "homepage": "https://opengeo.tech/bootstrap-list-filter/",
   "author": {
     "name": "Stefano Cudini",
     "email": "stefano.cudini@gmail.com",
-    "url": "http://labs.easyblog.it/"
+    "url": "https://opengeo.tech/"
   },
   "license": "MIT",
   "keywords": [
