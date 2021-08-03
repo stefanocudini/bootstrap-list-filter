@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-list-filter",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Search elements in Bootstrap lists",
   "main": "bootstrap-list-filter.src.js",
   "repository": {
@@ -17,7 +17,7 @@
   "keywords": [
     "bootstrap",
     "jquery",
-	"javascript"
+    "javascript"
   ],
   "dependencies": {
     "jquery": "*",
