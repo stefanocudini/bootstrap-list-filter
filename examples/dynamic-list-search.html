@@ -29,12 +29,12 @@
 			<input class="form-control" id="searchinput" type="search" placeholder="Search City..." />
 		</div>
 		<div id="searchlist" class="list-group">
-			<a class="list-group-item" href="http://osm.org/#map=12/-29.11761/59.65834"><span>Avellaneda</span></a>
-			<a class="list-group-item" href="http://osm.org/#map=12/-36.77698/59.85854"><span>Azul</span></a>
-			<a class="list-group-item" href="http://osm.org/#map=12/40.70583/19.95222"><span>Berat</span></a>
-			<a class="list-group-item" href="http://osm.org/#map=12/41.61028/20.00889"><span>Burrel</span></a>
-			<a class="list-group-item" href="http://osm.org/#map=12/-5.55/12.2"><span>Cabinda</span></a>
-			<a class="list-group-item" href="http://osm.org/#map=12/-13.78333/14.68333"><span>Caluquembe</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/-29.11761/59.65834"><span>Avellaneda</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/-36.77698/59.85854"><span>Azul</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/40.70583/19.95222"><span>Berat</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/41.61028/20.00889"><span>Burrel</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/-5.55/12.2"><span>Cabinda</span></a>
+			<a class="list-group-item" href="https://osm.org/#map=12/-13.78333/14.68333"><span>Caluquembe</span></a>
 			<!-- FILLED DYNAMICALLY -->
 		</div>
 	</form>
@@ -47,7 +47,7 @@
 
 $('#searchlist').btsListFilter('#searchinput', {
 	loadingClass: 'loading',
-	sourceTmpl: '<a class="list-group-item" href="http://osm.org/#map=12/{lat}/{lon}"><span>{title}</span></a>',
+	sourceTmpl: '<a class="list-group-item" href="https://osm.org/#map=12/{lat}/{lon}"><span>{title}</span></a>',
 	sourceData: function(text, callback) {
 		return $.getJSON('search.php?q='+text, function(json) {
 			callback(json);
