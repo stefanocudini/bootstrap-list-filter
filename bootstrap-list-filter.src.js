@@ -66,7 +66,9 @@
 			itemClassTmp: 'bts-dynamic-item',
 			itemEl: '.list-group-item',
 			itemChild: null,
-			itemFilter: defaultItemFilter
+			itemFilter: defaultItemFilter,
+			showEvent: 'show.bs',
+			hideEvent: 'hide.bs'
 		}, opts);
 
 		function debouncer(func, timeout) {
@@ -125,6 +127,7 @@
 				contains.show();
 				containsNot.hide();
 				cancelEl$.show();
+				self.trigger(opts.showEvent);
 
 				if($.type(opts.sourceData)==='function')
 				{
@@ -168,6 +171,7 @@
 				contains.show();
 				containsNot.show();
 				cancelEl$.hide();
+				self.trigger(opts.hideEvent);
 				searchlist$.find('.'+opts.itemClassTmp).remove();
 			}
 		}, opts.delay));
